@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    color: #424242;
+}
+
+/*
+ * Header
+ *
+ */
+
+.header {
+    min-height: 56px;
+    transition: min-height 0.3s;
+}
+
+.header__inner {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__title {
+    font-weight: 300;
+    font-size: 4em;
+    margin: 0.5em 0.25em;
+    display: inline-block;
+    color: #212121;
+}
+
+/* skip to konten */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+/*
+ * Top level navigation
+ */
+
+
+
+nav {
+    overflow: hidden;
+    display: flex;
+    width: 1000px;
+    margin: 25px auto;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+}
+
+nav ul li a {
+    color: rgb(147, 147, 147);
+    font-weight: bold;
+    padding: 24px;
+}
+
+nav ul li a:link {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(234,91,73);
+}
+
+.nav-logo {
+    flex: 1;
+}
+
+.nav-link {
+    flex: 1;
+    align-self: center;
+    text-align: right;
+}
+
+/* color */
+.bg-primary{
+    background-color: rgb(234,91,73);
+    color: white;
+}
+
+.btn{
+    padding: 1rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn.bg-primary:hover{
+    color: white;
+    background-color: rgb(205, 66, 48);
+}
+
+#mobileMenu{
+    display: none;
+}
+
+
+/*
+ * Jumbotron
+ */
+
+.color-overlay{
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    width: 100%;
+    text-align: center;
+    background: rgba(41, 41, 41, 0.82);
+    z-index: 2;
+    background-position: center;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    width: 100%;
+    text-align: center;
+    background-image: url("../public/images/heros/hero-image_4.jpg");
+    background-position: center;
+}
+
+.hero__inner {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.hero__title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.hero__tagline {
+    color: #fff;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+/*
+ * main
+ */
+
+h1.label-food{
+    font-size: 26px;
+    width: 100%;
+    margin: 40px auto;
+    text-align: center;
+    font-weight: 300;
+}
+
+main{
+    margin: 24px 24px;
+}
+
+.main-content{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    position: relative;
+}
+
+/* element  */
+.konten-container {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: .5rem;
+    box-shadow: none;
+    width: 300px;
+}
+
+.konten{
+    padding: 1rem;
+    text-align: justify;
+}
+
+.konten-header{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.konten-subtitle{
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: gray;
+}
+
+.konten-img{
+    width: 100%;
+    border-radius: .5rem .5rem 0 0;
+    height: 200px;
+    overflow: hidden;
+}
+
+#rating{
+    margin-right: 12px;
+}
+
+.primary{
+    color: rgb(234,91,73);
+}
+
+.red{
+    color: rgb(230, 57, 57);
+}
+
+.orange{
+    color: orange;
+}
+
+/*
+ * content
+ */
+
+.content {
+    padding: 32px;
+}
+
+/* hover effect */
+
+.hvr-glow {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr-glow:hover,
+.hvr-glow:focus,
+.hvr-glow:active {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+/*
+ * footer
+ */
+
+footer {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+footer ul {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 1em;
+    font-size: 14px;
+}
+
+footer a {
+    display: inline-block;
+    padding: 1.3em;
+    text-decoration: none;
+    color: #fff
+}

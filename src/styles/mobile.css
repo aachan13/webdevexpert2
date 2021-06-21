@@ -1,0 +1,38 @@
+@media screen and (max-width: 992px) {
+    .main-content {
+        width: 100%;
+        margin: 0;
+    }
+    nav {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #mainNav{
+        display: none;
+        transition: all 2s linear;
+    }
+
+    #mainNav.open{
+        display: block;
+    }
+
+    nav ul li {
+        text-align: center;
+        display: list-item;
+        flex: 1;
+        padding: 1rem;
+    }
+
+    #mobileMenu{
+        display: block;
+        text-align: center;
+    }
+
+    .nav-logo {
+        text-align: center;
+        flex: 1;
+    }
+}
