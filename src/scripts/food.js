@@ -27,11 +27,11 @@ function main() {
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    const navBtn = document.querySelector('#mobileMenu');
-    const navMenu = document.querySelector('#mainNav');
-    navBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
+    // const navBtn = document.querySelector('#mobileMenu');
+    // const navMenu = document.querySelector('#mainNav');
+    // navBtn.addEventListener('click', () => {
+    //   navMenu.classList.toggle('open');
+    // });
     getFoodData();
   });
 }

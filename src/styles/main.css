@@ -184,20 +184,22 @@ main{
 
 .main-content{
     width: 1000px;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 1.5rem;
     position: relative;
 }
 
 /* element  */
-.konten-container {
+a.konten-container {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: .5rem;
     box-shadow: none;
     width: 300px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .konten{
@@ -238,6 +240,10 @@ main{
 
 .orange{
     color: orange;
+}
+
+.text-center{
+    text-align: center;
 }
 
 /*
