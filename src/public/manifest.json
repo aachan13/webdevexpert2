@@ -2,7 +2,7 @@
   "name": "Foodex Lite",
   "short_name": "Food Explorer",
   "description": "restaurant and food for you",
-  "start_url": "/templates/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "rgb(234,91,73)",
