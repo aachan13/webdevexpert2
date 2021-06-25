@@ -8,7 +8,6 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
 }
 
 body {
@@ -17,53 +16,31 @@ body {
     color: #424242;
 }
 
+button{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /*
  * Header
  *
  */
 
-.header {
-    min-height: 56px;
-    transition: min-height 0.3s;
+header{
+    background-color: white;
+    position: sticky;
+    z-index: 99;
+    top:0;
+    padding: 1rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-
-.header__inner {
-    width: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.header__title {
-    font-weight: 300;
-    font-size: 4em;
-    margin: 0.5em 0.25em;
-    display: inline-block;
-    color: #212121;
-}
-
-/* skip to konten */
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    z-index: 100;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-/*
- * Top level navigation
- */
-
-
 
 nav {
-    overflow: hidden;
     display: flex;
     width: 1000px;
-    margin: 25px auto;
+    margin: 0 auto;
+    position: relative;
 }
 
 nav ul {
@@ -99,6 +76,23 @@ nav ul li a:hover {
     text-align: right;
 }
 
+
+/* skip to konten */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+/*
+ * Top level navigation
+ */
+
+
 /* color */
 .bg-primary{
     background-color: rgb(234,91,73);
@@ -106,10 +100,15 @@ nav ul li a:hover {
 }
 
 .btn{
-    padding: 1rem 1rem;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    cursor: pointer;
+display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: 0.575rem 0.95rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn.bg-primary:hover{
@@ -192,6 +191,11 @@ main{
     position: relative;
 }
 
+.page-label{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 /* element  */
 a.konten-container {
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -207,6 +211,16 @@ a.konten-container {
     text-align: justify;
 }
 
+.konten-cta{
+    color: rgb(250, 80, 57);
+    text-align: right;
+    font-weight: 700;
+}
+
+a.konten-container:hover .konten-cta{
+    text-decoration: underline;
+}
+
 .konten-header{
     font-weight: bold;
     font-size: 20px;
@@ -219,11 +233,134 @@ a.konten-container {
     color: gray;
 }
 
+.konten-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    text-align: left;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem;
+}
+
 .konten-img{
     width: 100%;
     border-radius: .5rem .5rem 0 0;
     height: 200px;
     overflow: hidden;
+}
+
+.detail-content{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#detailRestaurantHeader{
+    margin: .5rem 0;
+}
+
+.detail-content-header{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.detail-content-img{
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.label-img{
+    position: absolute;
+    bottom: 1.5rem;
+    background-color: #090808e3;
+    color: white;
+    padding: 1rem;
+}
+
+.menu-and-rating{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu-rating-content{
+    text-align: center;
+}
+
+.menu-rating-title{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.input-text{
+    margin-bottom: .8rem;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-text:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgb(226, 119, 105);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(226, 119, 105, 0.25);
+  }
+
+#btnSimpanReviewCont{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-error{
+    color: rgb(237, 43, 43);
+    font-weight: bold;
+}
+
+.text-sukses{
+    color: rgb(33, 194, 33);
+    font-weight: bold;
+
+}
+
+.review-box{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.review-date{
+    color: gray;
+    text-align: right;
+}
+
+.favorite-btn{
+    position: absolute;
+    bottom: 0;
+    right: 1.5rem;
+    padding: 1rem;
+    margin-bottom: -1.5rem;
+    border: 0;
+    border-radius: 50%;
+}
+
+.position-relative{
+    position: relative;
 }
 
 #rating{
@@ -246,12 +383,25 @@ a.konten-container {
     text-align: center;
 }
 
-/*
- * content
- */
+.text-left{
+    text-align: left;
+}
 
-.content {
-    padding: 32px;
+.text-right{
+    text-align: right;
+}
+
+.pill-badge{
+    display: inline-block;
+    padding: .25em .4em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: rgb(230, 57, 57);
+    border-color: rgb(230, 57, 57);
+    margin-right: .3rem;
 }
 
 /* hover effect */
