@@ -7,8 +7,22 @@ class FoodRestaurantSource {
     return responseJson.restaurants;
   }
  
-  static async detailMovie(id) {
+  static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
+    return response.json();
+  }
+
+  static async submitReview(data) {
+    const response = await fetch(API_ENDPOINT.REVIEW, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth-Token': 12345,
+      },
+      body: JSON.stringify({
+        id: data.id, name: data.name, review: data.review,
+      }),
+    });
     return response.json();
   }
 }
