@@ -10,7 +10,7 @@ import swRegister from './utils/sw-register';
 const app = new App({
   button: document.querySelector('#mobileMenu'),
   drawer: document.querySelector('#mainNav'),
-  content: document.querySelector('#mainContent'),
+  content: document.querySelector('#main'),
 });
 
 window.addEventListener('hashchange', () => {
