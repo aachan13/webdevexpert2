@@ -3,8 +3,9 @@ import FoodRestaurantSource from '../../data/food-restaurant';
 import {
   createDetailRestaurantHeader, createRestaurantCategoriesTemplate, createDetailRestaurantBody, createRatingMenuTemplate, createReviewTemplate, createFavButtonTemplate,
 } from '../templates/template-creator';
-import FavButtonInitiator from '../../utils/fav-btn-initiator';
+import FavButtonPresenter from '../../utils/fav-btn-presenter';
 import ReviewButtonInitiator from '../../utils/review-initator';
+import FoodexIdb from '../../data/foodex-idb';
 
 const Detail = {
   async render() {
@@ -75,8 +76,9 @@ const Detail = {
 
     favButtonContainer.innerHTML = createFavButtonTemplate();
 
-    FavButtonInitiator.init({
+    FavButtonPresenter.init({
       favButtonContainer: document.querySelector('#favButtonContainer'),
+      favoriteRestaurant: FoodexIdb,
       restaurant: {
         id: detailRestaurant.restaurant.id,
         name: detailRestaurant.restaurant.name,
