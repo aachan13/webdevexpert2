@@ -50,7 +50,7 @@ const createReviewTemplate = (review) => `
 `;
 
 const createFoodRestItemTemplate = (restaurant) => `
-    <a class="konten-container" href="${`/#/detail/${restaurant.id}`}">
+    <a class="konten-container restaurant" href="${`/#/detail/${restaurant.id}`}">
         <img src="${CONFIG.BASE_MED_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" class="konten-img"/>
 
         <div class="konten">
@@ -83,7 +83,15 @@ const createSuccessReviewTemplate = () => `
     <small aria-label="sukses submit review" class="text-sukses">Submit review berhasil.</small>
 `;
 
+const createNoItemTemplate = () => `
+
+    <div id="noFavRestaurant">
+        <img src="../images/no_item.svg" class="no-item-image" height="350px"/>
+        <p class="text-center" id="noRestaurantText">Tidak ada restaurant untuk ditampilkan</p>
+    </div>
+`;
+
 
 export {
-  createFoodRestItemTemplate, createDetailRestaurantHeader, createRestaurantCategoriesTemplate, createDetailRestaurantBody, createRatingMenuTemplate, createReviewTemplate, createFavButtonTemplate, createFavedButtonTemplate, createErrorReviewTemplate, createSuccessReviewTemplate,
+  createFoodRestItemTemplate, createDetailRestaurantHeader, createRestaurantCategoriesTemplate, createDetailRestaurantBody, createRatingMenuTemplate, createReviewTemplate, createFavButtonTemplate, createFavedButtonTemplate, createErrorReviewTemplate, createSuccessReviewTemplate, createNoItemTemplate
 };
