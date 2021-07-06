@@ -1,5 +1,5 @@
 import FoodexIdb from '../../data/foodex-idb';
-import { createFoodRestItemTemplate } from '../templates/template-creator';
+import { createFoodRestItemTemplate, createNoItemTemplate } from '../templates/template-creator';
 
 const Favorite = {
   async render() {
@@ -17,9 +17,13 @@ const Favorite = {
     const foodRestaurant = await FoodexIdb.getAllFoodRests();
     const restaurantItemContainer = document.querySelector('#restaurantFavContainer');
     restaurantItemContainer.innerHTML = '';
-    foodRestaurant.forEach((restaurant) => {
-      restaurantItemContainer.innerHTML += createFoodRestItemTemplate(restaurant);
-    });
+    if (foodRestaurant.length > 0) {
+      foodRestaurant.forEach((restaurant) => {
+        restaurantItemContainer.innerHTML += createFoodRestItemTemplate(restaurant);
+      });
+    } else {
+      restaurantItemContainer.innerHTML = createNoItemTemplate();
+    }
   },
 };
 
