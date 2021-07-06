@@ -1,10 +1,10 @@
-import FoodexIdb from '../data/foodex-idb';
 import { createFavButtonTemplate, createFavedButtonTemplate } from '../views/templates/template-creator';
  
-const FavButtonInitiator = {
-  async init({ favButtonContainer, restaurant }) {
+const FavButtonPresenter = {
+  async init({ favButtonContainer, favoriteRestaurant: FoodexIdb, restaurant }) {
     this._favButtonContainer = favButtonContainer;
     this._restaurant = restaurant;
+    this._favoriteRestaurant = FoodexIdb;
     await this._renderButton();
   },
  
@@ -18,7 +18,7 @@ const FavButtonInitiator = {
   },
  
   async _isRestaurantExist(id) {
-    const restaurant = await FoodexIdb.getFoodRest(id);
+    const restaurant = await this._favoriteRestaurant.getFoodRest(id);
     return !!restaurant;
   },
  
@@ -27,7 +27,7 @@ const FavButtonInitiator = {
  
     const favButton = document.querySelector('#favBtn');
     favButton.addEventListener('click', async () => {
-      await FoodexIdb.putFoodRest(this._restaurant);
+      await this._favoriteRestaurant.putFoodRest(this._restaurant);
       this._renderButton();
     });
   },
@@ -37,10 +37,10 @@ const FavButtonInitiator = {
  
     const favButton = document.querySelector('#favBtn');
     favButton.addEventListener('click', async () => {
-      await FoodexIdb.deleteFoodRest(this._restaurant.id);
+      await this._favoriteRestaurant.deleteFoodRest(this._restaurant.id);
       this._renderButton();
     });
   },
 };
  
-export default FavButtonInitiator;
+export default FavButtonPresenter;
