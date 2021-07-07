@@ -3,6 +3,8 @@ import '../styles/main.css';
 import '../styles/mobile.css';
 import '../styles/animation.css';
 import './components/konten';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
