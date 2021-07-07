@@ -33,3 +33,13 @@
         padding-right: 12px;
     }
 }
+
+@media screen and (max-width: 600px){
+    .hero {
+        background-image: url("/images/hero-image_4-small.jpg");
+    }
+
+    .hero__inner {
+        padding: 1rem;
+    }
+}
