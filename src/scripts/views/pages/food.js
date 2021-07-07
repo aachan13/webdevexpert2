@@ -16,16 +16,12 @@ const Food = {
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     
-    try {
       const foodRestaurant = await FoodRestaurantSource.listRestaurant();
       const restaurantItemContainer = document.querySelector('#restaurantItemContainer');
       restaurantItemContainer.innerHTML = '';
       foodRestaurant.forEach((restaurant) => {
         restaurantItemContainer.innerHTML += createFoodRestItemTemplate(restaurant);
       });
-    } catch (error) {
-      console.log(error);
-    }
   },
 };
 
