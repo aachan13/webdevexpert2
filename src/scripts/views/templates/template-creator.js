@@ -43,25 +43,28 @@ const createDetailRestaurantBody = (restaurant, makanan, minuman) => `
 
 const createReviewTemplate = (review) => `
     <div class="review-box">
-        <p><strong>${review.name}</strong></p>
-        <p>${review.review}</p>
+        <p class="review-name"><strong>${review.name}</strong></p>
+        <p class="review-text">${review.review}</p>
         <p class="review-date"><small>${review.date}</small></p>
     </div>
 `;
 
 const createFoodRestItemTemplate = (restaurant) => `
-    <a class="konten-container restaurant" href="${`/#/detail/${restaurant.id}`}">
-        <img src="${CONFIG.BASE_MED_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" class="konten-img"/>
+    <a class="konten-container restaurant hvr-glow" href="${`/#/detail/${restaurant.id}`}">
+        <div class="konten-header">
+        
+            <img class="lazyload konten-img" data-src="${CONFIG.BASE_MED_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}"/>
+            <p class="label-img font-bold">${restaurant.name}</p>
+
+        </div>
 
         <div class="konten">
-            <p class="konten-header">
-                ${restaurant.name}
-            </p>
-            <p class="konten-subtitle"><small> <span id="rating"><i class="fas fa-star fa-fw orange"></i> ${restaurant.rating}</span> <span><i class="fas fa-map-marker-alt fa-fw red"></i> ${restaurant.city}</small></span></p>
+            
+            <p class="konten-subtitle"><span id="rating"><i class="fas fa-star fa-fw orange"></i> ${restaurant.rating}</span> <span><i class="fas fa-map-marker-alt fa-fw red"></i> ${restaurant.city}</span></p>
             <p class="konten-text">
-                ${restaurant.description}...
+                ${restaurant.description.substr(0,120)}...
             </p>
-            <p class="konten-cta"><small>Selengkapnya &rarr;</small></p>
+            
         </div>
     </a>
   `;
@@ -86,7 +89,7 @@ const createSuccessReviewTemplate = () => `
 const createNoItemTemplate = () => `
 
     <div id="noFavRestaurant">
-        <img src="../images/no_item.svg" class="no-item-image" height="350px"/>
+        <img src="../images/no_item.png" class="no-item-image" height="350px"/>
         <p class="text-center" id="noRestaurantText">Tidak ada restaurant untuk ditampilkan</p>
     </div>
 `;
