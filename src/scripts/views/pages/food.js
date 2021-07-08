@@ -1,5 +1,5 @@
 import FoodRestaurantSource from '../../data/food-restaurant';
-import { createFoodRestItemTemplate } from '../templates/template-creator';
+import { createFoodRestItemTemplate, createNoItemTemplate } from '../templates/template-creator';
 
 const Food = {
   async render() {
@@ -16,12 +16,16 @@ const Food = {
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     
-      const foodRestaurant = await FoodRestaurantSource.listRestaurant();
-      const restaurantItemContainer = document.querySelector('#restaurantItemContainer');
-      restaurantItemContainer.innerHTML = '';
-      foodRestaurant.forEach((restaurant) => {
-        restaurantItemContainer.innerHTML += createFoodRestItemTemplate(restaurant);
-      });
+    const restaurantItemContainer = document.querySelector('#restaurantItemContainer');
+      try {
+        const foodRestaurant = await FoodRestaurantSource.listRestaurant();
+        restaurantItemContainer.innerHTML = '';
+        foodRestaurant.forEach((restaurant) => {
+          restaurantItemContainer.innerHTML += createFoodRestItemTemplate(restaurant);
+        });
+      } catch (error) {
+        restaurantItemContainer.innerHTML = createNoItemTemplate();
+      }
   },
 };
 
