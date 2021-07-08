@@ -71,7 +71,7 @@ Scenario('review restaurant', async ({ I }) => {
     I.fillField('#inputReview', review);
     I.click('#btnSimpanReview');
 
-    I.refreshPage();
+    I.wait(2);
 
     const nameReviewTerakhir = locate('.review-name').last();
     const textNameReview = await I.grabTextFrom(nameReviewTerakhir);
